@@ -11,6 +11,7 @@ from gui.features.utils.driver_config import setup_browser, clean_browser
 # https://behave.readthedocs.io/en/latest/api.html?highlight=before_feature#environment-file-functions
 from gui.features.utils.graphql.gqllib import connect_to_graphql, execute_gql
 from gui.features.utils.graphql.queries import EMPTY_CART
+from gui.features.utils.singleton import singleton_instances
 
 
 def before_all(context):
@@ -54,6 +55,7 @@ def before_feature(context, feature):
 def after_feature(context, feature):
     # Close and clean the driver
     if "graphql" not in feature.tags:
+        singleton_instances.clear()
         clean_browser(context)
 
 
