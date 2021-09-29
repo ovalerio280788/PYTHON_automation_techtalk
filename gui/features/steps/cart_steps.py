@@ -29,7 +29,7 @@ def i_should_see_this_product_added_in_the_table(context, these_this_flag, many_
     ui_rows = table.body_rows()
     ui_rows = [r for r in ui_rows if r.get_attribute('class') != ""]
     assert len(ui_rows) == len(context.table.rows), f'There should be "{len(context.table.rows)}" ' \
-                                                    f'product(s) in the cart, but there are "{ui_rows}"'
+                                                    f'product(s) in the cart, but there are "{len(ui_rows)}"'
 
     # for ui_row in ui_rows:
     for i, test_row in enumerate(context.table):
