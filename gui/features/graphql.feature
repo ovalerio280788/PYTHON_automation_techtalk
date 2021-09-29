@@ -20,6 +20,6 @@ Feature: Tests to validate graphql functionality
     And Each products.edges[*].node.id into json node products should have a string value
     And Each products.edges[*].node.name into json node products should have a string value
     And Each products.edges[*].node.type into json node products should have a string value
-    And Each products.edges[*].node.totalSales into json node products should have a string value
+    And Each products.edges[*].node.totalSales into json node products should have a int value
     And The response time should be less than 1500 ms
 
