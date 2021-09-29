@@ -70,4 +70,4 @@ def after_scenario(context, scenario):
                           attachment_type=allure.attachment_type.PNG)
 
     if "clear_cart" in scenario.tags:
-        execute_gql(context, EMPTY_CART, do_assert=False)
+        execute_gql(context, EMPTY_CART, do_assert=True)
